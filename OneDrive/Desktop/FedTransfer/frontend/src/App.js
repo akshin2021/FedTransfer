@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
+import Widget1Page from './Widget1'; // Import the new component
 
 const Box = ({ title, content, linkTo }) => (
   <Link to={linkTo} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -22,15 +23,15 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>Welcome to the Dashboard, {userName}!</h1>
+      <h2>Welcome {userName}!</h2>
 
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        <Box title="Widget 1" content="Content for Widget 1" linkTo="/widgets/1" />
-        <Box title="Widget 2" content="Content for Widget 2" linkTo="/widgets/2" />
-        <Box title="Widget 3" content="Content for Widget 3" linkTo="/widgets/3" />
-        <Box title="Widget 4" content="Content for Widget 4" linkTo="/widgets/4" />
-        <Box title="Widget 5" content="Content for Widget 5" linkTo="/widgets/5" />
-        <Box title="Widget 6" content="Content for Widget 6" linkTo="/widgets/6" />
+        <Box title="Transfer Management" content="" linkTo="/Widget1Page" />
+        <Box title="Widget 2" content="" linkTo="/widgets/2" />
+        <Box title="Widget 3" content="" linkTo="/widgets/3" />
+        <Box title="Widget 4" content="" linkTo="/widgets/4" />
+        <Box title="Widget 5" content="" linkTo="/widgets/5" />
+        <Box title="Widget 6" content="" linkTo="/widgets/6" />
       </div>
     </div>
   );
@@ -40,7 +41,7 @@ const App = () => {
   return (
     <Router>
       <div>
-        <h1>Simple React Dashboard</h1>
+        <h1>HR Dashboard</h1>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/widgets/:widgetId" element={<Widget />} />
